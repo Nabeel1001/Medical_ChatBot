@@ -55,8 +55,6 @@ jobs:
 
       - name: Run Docker Image to serve users
         run: |
-          docker rm -f $(docker ps -q --filter "publish=8080") || true
-
           docker run -d \
             -p 8080:8080 \
             -e AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}" \
